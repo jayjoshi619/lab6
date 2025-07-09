@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+header {
+    background-color: #a4c4e7;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #8ba3c7;
+}
+header .header-icon {
+    height: 90px;
+    margin-right: 15px;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8em;
+    color: #4a638a; 
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    padding-left: 320px;
+}
+.container {
+    display: flex;
+    max-width: 1500px;
+    margin: 0px auto; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+.sidebar {
+    width: 200px;
+    background-color: #f0c3cb;
+    padding: 2px 0;
+    box-sizing: border-box;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.sidebar ul li a:hover {
+    background-color: #e0b0bb;
+}
+.content {
+    flex-grow: 1;
+    background-color: #dbe8f7;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.content .text-section {
+    flex: 1; 
+    min-width: 400px; 
+}
+
+.content .image-section {
+    width: 450px; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+}
+
+.content .main-lighthouse-img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+}
+.content h2 {
+    font-family: 'Roboto', sans-serif; 
+    color: #555;
+    font-size: 1.6em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+.content h2:first-of-type {
+    margin-top: 0;
+}
+.content p {
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #a4c4e7;
+    color: #4a638a;
+    font-size: 0.9em;
+    margin-top: 0px;
+    border-top: 1px solid #8ba3c7;
+}
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    .container {
+        max-width: 90%;
+        margin: 15px auto;
+    }
+    .sidebar {
+        width: 150px; 
+    }
+    .sidebar ul li a {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+    .content {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .content .text-section{
+        min-width: 300px;
+    }
+    .content .image-section {
+        width: 350px; 
+    }
+    .content h2{
+        font-size: 1.4em;
+    }
+    .content p{
+        font-size: 0.95em;
+    }
+}
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+    header .header-icon {
+        height: 70px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    header h1 {
+        font-size: 6vw;
+    }
+      .container {
+        flex-direction: column;
+        margin: 10px auto;
+        width: 95%;
+        box-shadow: none;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid #e0b0bb;
+
+    }
+    .sidebar ul {
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: space-around;
+    }
+    .sidebar ul li {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+.sidebar ul li a {
+        padding: 10px 5px;
+        font-size: 0.8em;
+    }
+    .content {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+    .content .text-section,
+    .content .image-section {
+        min-width: unset;
+        width: 100%;
+        flex: none; 
+    }
+    .content .main-lighthouse-img {
+        max-width: 90%;
+        margin: 0 auto;
+        display: block; 
+    }
+ .content h2 {
+        font-size: 1.2em;
+    }
+    .content p {
+        font-size: 0.9em;
+    footer {
+        padding: 10px;
+        font-size: 0.8em;
+    }
+}
+}
