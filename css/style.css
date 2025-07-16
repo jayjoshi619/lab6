@@ -5,17 +5,13 @@ body {
     color: #333;
 }
 header {
+    background: url('../images/lighthouse.jpeg')no-repeat left center;
     background-color: #a4c4e7;
     padding: 15px 20px;
     display: flex;
     align-items: center;
     border-bottom: 2px solid #8ba3c7;
 }
-header .header-icon {
-    height: 90px;
-    margin-right: 15px;
-}
-
 header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2.8em;
@@ -25,17 +21,15 @@ header h1 {
     padding-left: 320px;
 }
 .container {
-    display: flex;
-    max-width: 1500px;
-    margin: 0px auto; 
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    background-color: #fff;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    grid-template-areas: "nav main";
+    flex: 1;
 }
 .sidebar {
-    width: 200px;
     background-color: #f0c3cb;
-    padding: 2px 0;
-    box-sizing: border-box;
+    padding: 20px 0;
+    grid-area: nav;
 }
 .sidebar ul {
     list-style: none;
@@ -43,7 +37,9 @@ header h1 {
     margin: 0;
 }
 .sidebar ul li a {
-    display: block;
+    display: block;     
+    margin: 5px;
+    text-align: center;
     padding: 12px 20px;
     color: #fff;
     text-decoration: none;
@@ -54,24 +50,25 @@ header h1 {
     background-color: #e0b0bb;
 }
 .content {
-    flex-grow: 1;
+    grid-area: main;
     background-color: #dbe8f7;
     padding: 20px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
     flex-wrap: wrap;
     gap: 20px;
 }
 
 .content .text-section {
-    flex: 1; 
-    min-width: 400px; 
+    grid-column: 1;
+    padding-right: 20px;
+    padding-right: 20px;
 }
 
 .content .image-section {
-    width: 450px; 
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; 
+    width: 200px; 
+    height: auto;
+    margin-top: 10px 70px 60px;
 }
 
 .content .main-lighthouse-img {
@@ -103,92 +100,109 @@ footer {
     border-top: 1px solid #8ba3c7;
 }
 @media (max-width: 992px) {
+    header {
+        background: url('../images/lighthouse.jpeg') no-repeat center center;
+        background-size: cover;
+        background-color: #a4c4e7;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 150px;
+    }
     header h1 {
         font-size: 2.2em;
+        color: #4a638a;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bold;
+        text-shadow: 4px 4px 6 px;
+        background-color: transparent;
+        margin: 0px;
+        padding: 0px;
     }
     .container {
-        max-width: 90%;
-        margin: 15px auto;
+        grid-template-columns: 2fr;
+        grid-template-areas: "nav" "main";
     }
     .sidebar {
-        width: 150px; 
+        width: 100%; 
+        padding: 0px;
+        background-color: #a4c4e7;
+    }
+    .sidebar ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3px;
+        margin: 6px;
+        padding: 5px;
     }
     .sidebar ul li a {
+        display: block;
+        background-color: #f0c3cb;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        border: none;
         padding: 10px 15px;
         font-size: 0.9em;
     }
     .content {
         gap: 15px;
         padding: 15px;
+        grid-template-columns: 4fr 2fr;
     }
 
     .content .text-section{
         min-width: 300px;
     }
     .content .image-section {
-        width: 350px; 
-    }
-    .content h2{
-        font-size: 1.4em;
-    }
-    .content p{
-        font-size: 0.95em;
+        width: 250px;
+        margin-top: 10px; 
     }
 }
 @media (max-width: 767px) {
     header {
-        flex-direction: column;
-        text-align: center;
-        padding: 10px;
-    }
-    header .header-icon {
-        height: 70px;
-        margin-right: 0;
-        margin-bottom: 10px;
+        background-image: url('../images/lighthouse.jpeg') no-repeat right center;
+        background-color: #8ba3c7;
+        background-size:;
+        text-align: ;
+        padding: 0px;
     }
     header h1 {
-        font-size: 6vw;
+        font-size: 1.2em;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-shadow: none;
+        color: #a4c4e7;
+        font-weight: bold;
+        margin: 0;
     }
       .container {
-        flex-direction: column;
-        margin: 10px auto;
-        width: 95%;
-        box-shadow: none;
+        grid-template-columns: 1fr;
+        grid-template-areas: "nav" "main";
     }
     .sidebar {
-        width: 100%;
-        padding: 10px 0;
-        border-bottom: 1px solid #e0b0bb;
-
+        background-color: #a4c4e7;
     }
     .sidebar ul {
-        display: flex;
-        flex-wrap:wrap;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: 1fr;
     }
     .sidebar ul li {
         flex: 1 1 auto;
         text-align: center;
     }
-.sidebar ul li a {
-        padding: 10px 5px;
-        font-size: 0.8em;
+    .sidebar ul li a {
+        padding: 10px 20px ;
+        text-align: left;
+        width: 100%;
+        font-size: 1.2em;
+        border-bottom: 2px solid #fff;
+        background-color: #a4c4e7;
     }
     .content {
-        flex-direction: column;
+        grid-template-columns: 2fr;
         padding: 10px;
         gap: 10px;
-    }
-    .content .text-section,
-    .content .image-section {
-        min-width: unset;
-        width: 100%;
-        flex: none; 
-    }
-    .content .main-lighthouse-img {
-        max-width: 90%;
-        margin: 0 auto;
-        display: block; 
     }
  .content h2 {
         font-size: 1.2em;
